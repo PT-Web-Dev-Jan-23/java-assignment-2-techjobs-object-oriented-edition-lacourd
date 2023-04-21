@@ -93,4 +93,37 @@ public class Job {
     public int getId() {
         return id;
     }
+    @Override
+    public String toString() {
+        String name = this.getName();
+        String employer = this.getEmployer().toString();
+        String location = this.getLocation().toString();
+        String positionType = this.getPositionType().toString();
+        String coreCompetency = this.getCoreCompetency().toString();
+        String emptyData = "Data not available";
+        if (name == "" && employer == "" && location =="" && positionType == "" && coreCompetency == "") {
+            return "\nOOPS! This job does not seem to exist.\n";
+        }
+        if (name == "") {
+            name = emptyData;
+        }
+        if (employer == "") {
+            employer = emptyData;
+        }
+        if (location =="") {
+            location = emptyData;
+        }
+        if (positionType == "") {
+            positionType = emptyData;
+        }
+        if (coreCompetency == "") {
+            positionType = emptyData;
+        }
+        return "\nID: " + this.getId() +
+                "\nName: " + name +
+                "\nEmployer: " + employer +
+                "\nLocation: " + location +
+                "\nPosition Type: " + positionType +
+                "\nCore Competency: " + coreCompetency +"\n";
+    }
 }
