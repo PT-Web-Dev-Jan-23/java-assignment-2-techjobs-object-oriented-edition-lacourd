@@ -38,10 +38,10 @@ public class PositionType extends JobField{
         return id == that.id;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id);
+//    }
 
 
     // Getters and Setters:

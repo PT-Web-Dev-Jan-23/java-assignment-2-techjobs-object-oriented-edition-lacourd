@@ -95,13 +95,13 @@ public class Job {
     }
     @Override
     public String toString() {
-        String name = this.getName();
-        String employer = this.getEmployer().toString();
-        String location = this.getLocation().toString();
-        String positionType = this.getPositionType().toString();
-        String coreCompetency = this.getCoreCompetency().toString();
+        String name = this.name;
+        String employer = this.employer.getValue();
+        String location = this.location.getValue();
+        String positionType = this.positionType.getValue();
+        String coreCompetency = this.coreCompetency.getValue();
         String emptyData = "Data not available";
-        if (name == "" && employer == "" && location =="" && positionType == "" && coreCompetency == "") {
+        if (name == "" && employer=="" && location=="" && positionType=="" && coreCompetency=="") {
             return "\nOOPS! This job does not seem to exist.\n";
         }
         if (name == "") {
@@ -110,16 +110,16 @@ public class Job {
         if (employer == "") {
             employer = emptyData;
         }
-        if (location =="") {
+        if (location == "") {
             location = emptyData;
         }
-        if (positionType == "") {
-            positionType = emptyData;
+        if (positionType=="") {
+            positionType =emptyData;
         }
-        if (coreCompetency == "") {
-            positionType = emptyData;
+        if (coreCompetency=="") {
+            coreCompetency=emptyData;
         }
-        return "\nID: " + this.getId() +
+        return "\nID: " + id +
                 "\nName: " + name +
                 "\nEmployer: " + employer +
                 "\nLocation: " + location +
